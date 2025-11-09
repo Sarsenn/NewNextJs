@@ -28,7 +28,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "src/types/**/*.d.ts",     // ✅ добавляем сюда
+    "types/**/*.d.ts"          // ✅ и на случай если папка в корне
   ],
   "exclude": ["node_modules"]
 }
