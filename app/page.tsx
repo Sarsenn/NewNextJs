@@ -1,15 +1,20 @@
+"use client";
 import { Metadata } from "next";
 import { Button, Htag, Ptag, Tag } from "./components"; // сам путь уменшение
-export async function generateMetadata(): Promise<Metadata> {
+import { useEffect, useState } from "react";
+import { Rating } from "./components";
+import { withLayout } from "./layout/Layout";
+/* export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "My-top",
   };
-}
+} */
 
-export default function Home() {
+function Home() {
+  const [rating, setRating] = useState<number>(2);
   return (
     <>
-      <Htag tag="h1">Текст</Htag>
+      <Htag tag="h1">Hello world! </Htag>
       <Button appearance="primary" arrow="right">
         Button
       </Button>
@@ -32,6 +37,9 @@ export default function Home() {
       <Tag color="green" size="s">
         HH
       </Tag>
+      <Rating rating={rating} isEditable={true} setRating={setRating} />
     </>
   );
 }
+
+export default withLayout(Home);
